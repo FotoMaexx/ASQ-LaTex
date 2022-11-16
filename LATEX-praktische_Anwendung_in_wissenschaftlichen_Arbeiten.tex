@@ -85,4 +85,18 @@ Um Zeilenumbrüche ziwschen zwei Wörtern oder Ziffern verhindern zu können, gi
   \item mit einer \verb!~! kann ein Zeilenumbruch zwischen zwei Wörtern verhindert werden.
   \item mit dem Befehl \verb!\nolinebreak! lässt sich ebenfalls ein Zeilenumbruch verhindern.
 \end{itemize}
+\section{Zeilenabstand}
+Um den Zeilenabstand auf "`eineinhalbzeilig"' bzw. 1,5 ändern zu können, kann das Paket \verb!setspace! verwendet werden. Dieses wird über \verb!\usepackage{setspace}! eingebunden. Den Zeilenabstand kann man dort ebenfalls für das ganze Dokument definieren indem man es in die [] hineinschreibt. Hier gibt es folgende Optionen:
+\begin{itemize}
+  \item \verb!\usepackage[doublespace]{setspace}!: Der Zeilenabstand wird auf 2 gesetzt.
+  \item \verb!\usepackage[onehalfspace]{setspace}!: Der Zeilenabstand wird auf 1,5 gesetzt.
+  \item \verb!\usepackage[singelspace]{setspace}!: Der Zeilenabstand wird auf 1 gesetzt.
+\end{itemize}
+Um nur für einen Bereich den Zeilenabstand anpassen zu können, kann man mit
+\begin{verbatim}
+  \begin{setspace}{...}
+    ...
+  \end{setspace}{...}
+\end{verbatim}
+den Bereich definieren.
 \end{document}
