@@ -10,17 +10,26 @@ ngerman
 \usepackage{enumitem}
 \usepackage{multicol}
 
+\usepackage{varioref}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+\usepackage{chngcntr}
+\counterwithout{footnote}{chapter}
+
 \begin{document}
 \author{Maximilian Hauser}
 \title{Allgemeine Schlüsselqualifikation \\
 \LaTeX - praktische Anwendung in wissenschaftlichen Arbeiten}
 
-\maketitle
+\maketitle[-1]
 \tableofcontents
 
 \chapter{Kurstag 1 - Kapitel 1 \& 2}
 \label{cha:chap1-2}
+\label{blatt:1}
 Diese Section beinhaltet einen fiktiven Text, welcher der Darstellung eines Fließtextes gilt um zu zeigen, dass ein automatischer Zeilenumbruch gemacht wird.
+
 \section{Aufzählungsliste}
 \label{sec:item-list}
 \begin{itemize}
@@ -28,6 +37,7 @@ Diese Section beinhaltet einen fiktiven Text, welcher der Darstellung eines Flie
   \item Ich bin der zweite Aufzählungspunkte
   \item Ich bin der dritte Aufzählungspunkte
 \end{itemize}
+
 \section{nummerierte Liste}
 \label{sec:enum-list}
 \begin{enumerate}
@@ -35,9 +45,12 @@ Diese Section beinhaltet einen fiktiven Text, welcher der Darstellung eines Flie
   \item Ich bin der zweite nummerierte Punkt
   \item Ich bin der dritte nummerierte Punkt
 \end{enumerate}
+
 \section{Besondere Zeichen}
 \label{sec:special-cases}
+
 \subsection{deutsche Anführungszeichen}
+\label{subsec:ger-qoute}
 Deutsche Anführungszeichen werden mit folgenden Befehlen erzeugt: \\
 \begin{itemize}
   \item "` wird mit \verb!"`! oder \verb!\glqq! erzeugt.
@@ -46,7 +59,9 @@ Deutsche Anführungszeichen werden mit folgenden Befehlen erzeugt: \\
 Beispiel: \\
 "`Ich bin ein Satz in deutschen Anführungszeichen"' \\
 \glqq Ich bin ein Satz in deutschen Anführungszeichen\grqq
+
 \subsection{französische Anführungszeichen}
+\label{subsec:fr-qoute}
 Französische Anführungszeichen werden mit folgenden Befehlen erzeugt: \\
 \begin{itemize}
   \item "< wird mit \verb!"<! oder \verb!\flqq! erzeugt.
@@ -55,7 +70,9 @@ Französische Anführungszeichen werden mit folgenden Befehlen erzeugt: \\
 Beispiel: \\
 "<Ich bin ein Satz in französischen Anführungszeichen"> \\
 \flqq Ich bin ein Satz in französischen Anführungszeichen\frqq
+
 \subsection{englische Anführungszeichen}
+\label{subsec:gb-qoute}
 Englische Anführungszeichen werden mit folgenden Befehlen erzeugt: \\
 \begin{itemize}
   \item `` wird mit \verb!``! erzeugt.
@@ -63,32 +80,49 @@ Englische Anführungszeichen werden mit folgenden Befehlen erzeugt: \\
 \end{itemize}
 Beispiel: \\
 ``Ich bin ein Satz in englischen Anführungszeichen''
+
 \subsection{Sonderzeichen}
+\label{subsec:special-cases}
+
 \subsubsection{\%}
 Das Sonderzeichen \% kann mit dem Befehl \verb!\%! im Text erzeugt werden.
+
 \subsubsection{\&}
 Das Sonderzeichen \& kann mit dem Befehl \verb!\&! im Text erzeugt werden.
+
 \subsubsection{\#}
 Das Sonderzeichen \# kann mit dem Befehl \verb!\#! im Text erzeugt werden.
+
 \subsubsection{\$}
 Das Sonderzeichen \$ kann mit dem Befehl \verb!\$! im Text erzeugt werden.
+
 \subsubsection{\_}
 Das Sonderzeichen \_ kann mit dem Befehl \verb!\_! im Text erzeugt werden.
+
 \subsubsection{\{}
 Das Sonderzeichen \{ kann mit dem Befehl \verb!\{! im Text erzeugt werden.
+
 \subsubsection{\}}
 Das Sonderzeichen \} kann mit dem Befehl \verb!\}! im Text erzeugt werden.
+
 \subsection{Zeilenumbruch}
+\label{subsec:linebreak}
 Ein Zeilenumbruch kann mit dem Befehl \verb!\\! im Text erzeugt werden.
+
 \subsection{Textgruppen}
+\label{subsec:textgroups}
 Textgruppen können mit \verb!{!Text\verb!}! erstellt werden. Diese können dann mit Befehlen wie \verb!\emph! gestaltet werden.
+
 \section{Verhindern von Zeilenumbrüchen}
+\label{sec:no-linebreak}
 Um Zeilenumbrüche ziwschen zwei Wörtern oder Ziffern verhindern zu können, gibt es zwei Arten von Leerzeichen welche dafür verwendert werden können:
 \begin{itemize}
   \item mit einer \verb!~! kann ein Zeilenumbruch zwischen zwei Wörtern verhindert werden.
   \item mit dem Befehl \verb!\nolinebreak! lässt sich ebenfalls ein Zeilenumbruch verhindern.
 \end{itemize}
+
 \section{Zeilenabstand}
+\label{sec:linespace}
 Um den Zeilenabstand auf "`eineinhalbzeilig"' bzw. 1,5 ändern zu können, kann das Paket \verb!setspace! verwendet werden. Dieses wird über \verb!\usepackage{setspace}! eingebunden. Den Zeilenabstand kann man dort ebenfalls für das ganze Dokument definieren indem man es in die [] hineinschreibt. Hier gibt es folgende Optionen:
 \begin{itemize}
   \item \verb!\usepackage[doublespace]{setspace}!: Der Zeilenabstand wird auf 2 gesetzt.
@@ -102,7 +136,9 @@ Um nur für einen Bereich den Zeilenabstand anpassen zu können, kann man mit
   \end{setspace}{...}
 \end{verbatim}
 den Bereich definieren.
+
 \section{Aufzählungszeichen ändern}
+\label{sec:itemize-labels}
 Um die Aufzählungszeichen ändern zu können, müssen wir den Befel "`renewen"'. Dies können wir mit \verb!\renewcommand{}! vornehmen. Um das Aufzählungszeichen der ersten Ebene zu ändern geben wir den Befehl \verb!\renewcommand{\labelitemi}{Gewünsches Item}! ein. Bei den weiteren Ebenenen wird die Römische Ziffer am Ende des \verb!\labelitem! Befehls um 1 erhöht, sprich: \verb!\labelitemi!, \verb!\labelitemii!, \verb!\labelitemiii!, \verb!\labelitemiv!\\
 Um das gewünsche Ergebnis aus dem Aufgabenblatt zu erzielen müssen wir folgende Befehle vor der Liste ausführen:
 \begin{verbatim}
@@ -119,21 +155,31 @@ Somit erzielen wir folgendes Ergebnis:
   \end{itemize}
 \end{itemize}
 Wollen wir den Effekt nur innerhalb einer bestimmten Liste erzielen, dann können wir die \verb!\renewcommand!-Befehle nach dem \verb!\begin{itemize}! einfügen.
+
 \section{Nummerierung von arabisch auf römisch umstellen}
+\label{sec:enum-label}
 Um die Zahlen von einer nummerierten Liste von arabischen Zahlen auf römische Zahlen zu ändern, müssen wir zuerst das Paket\verb!enumitem! laden. Dieses wird über \verb!\usepackage{enumitem}! eingebunden. \\
 Daraufhin können wir die nummerierten Listen mit Argumenten in [eckigen Klammern] erweitern. In unserem Fall brauchen wir hierfür das Argument \verb![label=\roman*]! bzw. \verb![label=\Roman*]! für große Ziffern. Dadruch bekommen wir folgende Ergebnisse:
-  \begin{multicols}{2}
-    \begin{enumerate}[label=\roman*]
-      \item Erster Punkt
-      \item Zweiter Punkt
-      \item Dritter Punkt
-    \end{enumerate}
-    \emph{Liste mit kleinen römischen Ziffern}
-    \begin{enumerate}[label=\Roman*]
-      \item Erster Punkt
-      \item Zweiter Punkt
-      \item Dritter Punkt
-    \end{enumerate}
-    \emph{Liste mit großen römischen Ziffern}
-  \end{multicols}
+\begin{multicols}{2}
+  \begin{enumerate}[label=\roman*]
+    \item Erster Punkt
+    \item Zweiter Punkt
+    \item Dritter Punkt
+  \end{enumerate}
+  \emph{Liste mit kleinen römischen Ziffern}
+  \begin{enumerate}[label=\Roman*]
+    \item Erster Punkt
+    \item Zweiter Punkt
+    \item Dritter Punkt
+  \end{enumerate}
+  \emph{Liste mit großen römischen Ziffern}
+\end{multicols}
+
+\chapter{Kurstag 1 - Kapitel 3 \& 4}
+\label{cha:chap3-4}
+\label{blatt:2}
+
+\section{Nummerierung der Fußnoten über alle Kapitel}
+\label{sec:footnotes}
+Eine Fußnote\footnote{Eine Fußnote ist eine Anmerkung, die im Druck-Layout aus dem Fließtext ausgelagert wird, um den Text flüssig lesbar zu gestalten. Eine Fußnote kann als „Anmerkung, Legende, Bemerkung, Quellenangabe, Übersetzung oder weiterführende Erklärung zu einem Wort oder einer Textpassage“ dienen.} kann man mit dem Befehl \verb!\footnote{name}! erstellen. Dass diese nun auch in einer PDF auf die Fußnote verlinkt werden, binden wir die Pakete \verb!varioref!\footnote{Einbinden über \textbackslash usepackage\{varioref\}}, \verb!hyperref!\footnote{Einbinden über \textbackslash usepackage\{hyperref\}} und \verb!cleverref!\footnote{Einbinden über \textbackslash usepackage\{cleverref\}} ein. Dass die Fußnotennummerierung nun nicht in jedem Kapitel bei 1 wieder beginnt, binden wird das Paket \verb!chngcntr!\footnote{Einbinden über \textbackslash usepackage\{chngcntr\}} ein und nutzen den Befehl \verb!\counterwithout{footnote}{chapter}!. Somit wird der Counter der Fußnoten nicht bei jedem Kapitel wieder auf 1 zurückgesetzt.
 \end{document}
