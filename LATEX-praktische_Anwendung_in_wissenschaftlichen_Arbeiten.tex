@@ -99,4 +99,21 @@ Um nur für einen Bereich den Zeilenabstand anpassen zu können, kann man mit
   \end{setspace}{...}
 \end{verbatim}
 den Bereich definieren.
+\section{Aufzählungszeichen ändern}
+Um die Aufzählungszeichen ändern zu können, müssen wir den Befel "`renewen"'. Dies können wir mit \verb!\renewcommand{}! vornehmen. Um das Aufzählungszeichen der ersten Ebene zu ändern geben wir den Befehl \verb!\renewcommand{\labelitemi}{Gewünsches Item}! ein. Bei den weiteren Ebenenen wird die Römische Ziffer am Ende des \verb!\labelitem! Befehls um 1 erhöht, sprich: \verb!\labelitemi!, \verb!\labelitemii!, \verb!\labelitemiii!, \verb!\labelitemiv!\\
+Um das gewünsche Ergebnis aus dem Aufgabenblatt zu erzielen müssen wir folgende Befehle vor der Liste ausführen:
+\begin{verbatim}
+  \renewcommand{\labelitemi}{$\rightarrow$}
+  \renewcommand{\labelitemii}{$\rightarrow$}
+\end{verbatim}
+Somit erzielen wir folgendes Ergebnis:
+\begin{itemize}
+  \renewcommand{\labelitemi}{$\rightarrow$}
+  \renewcommand{\labelitemii}{$\rightarrow$}
+  \item Erste Ebene
+  \begin{itemize}
+    \item Zweite Ebene
+  \end{itemize}
+\end{itemize}
+Wollen wir den Effekt nur innerhalb einer bestimmten Liste erzielen, dann können wir die \verb!\renewcommand!-Befehle nach dem \verb!\begin{itemize}! einfügen.
 \end{document}
