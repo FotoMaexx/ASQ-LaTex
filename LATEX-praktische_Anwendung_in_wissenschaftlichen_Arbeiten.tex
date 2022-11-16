@@ -7,6 +7,9 @@ ngerman
 \usepackage[utf8]{inputenc}
 \usepackage{babel}
 
+\usepackage{enumitem}
+\usepackage{multicol}
+
 \begin{document}
 \author{Maximilian Hauser}
 \title{Allgemeine Schlüsselqualifikation \\
@@ -116,4 +119,21 @@ Somit erzielen wir folgendes Ergebnis:
   \end{itemize}
 \end{itemize}
 Wollen wir den Effekt nur innerhalb einer bestimmten Liste erzielen, dann können wir die \verb!\renewcommand!-Befehle nach dem \verb!\begin{itemize}! einfügen.
+\section{Nummerierung von arabisch auf römisch umstellen}
+Um die Zahlen von einer nummerierten Liste von arabischen Zahlen auf römische Zahlen zu ändern, müssen wir zuerst das Paket\verb!enumitem! laden. Dieses wird über \verb!\usepackage{enumitem}! eingebunden. \\
+Daraufhin können wir die nummerierten Listen mit Argumenten in [eckigen Klammern] erweitern. In unserem Fall brauchen wir hierfür das Argument \verb![label=\roman*]! bzw. \verb![label=\Roman*]! für große Ziffern. Dadruch bekommen wir folgende Ergebnisse:
+  \begin{multicols}{2}
+    \begin{enumerate}[label=\roman*]
+      \item Erster Punkt
+      \item Zweiter Punkt
+      \item Dritter Punkt
+    \end{enumerate}
+    \emph{Liste mit kleinen römischen Ziffern}
+    \begin{enumerate}[label=\Roman*]
+      \item Erster Punkt
+      \item Zweiter Punkt
+      \item Dritter Punkt
+    \end{enumerate}
+    \emph{Liste mit großen römischen Ziffern}
+  \end{multicols}
 \end{document}
