@@ -7,7 +7,6 @@ ngerman
 \usepackage[utf8]{inputenc}
 \usepackage{babel}
 
-
 \begin{document}
 \author{Maximilian Hauser}
 \title{Allgemeine Schlüsselqualifikation \\
@@ -17,20 +16,24 @@ ngerman
 \tableofcontents
 
 \chapter{Kurstag 1 - Kapitel 1 \& 2}
+\label{cha:chap1-2}
 Diese Section beinhaltet einen fiktiven Text, welcher der Darstellung eines Fließtextes gilt um zu zeigen, dass ein automatischer Zeilenumbruch gemacht wird.
 \section{Aufzählungsliste}
+\label{sec:item-list}
 \begin{itemize}
   \item Ich bin der erste Aufzählungspunkte
   \item Ich bin der zweite Aufzählungspunkte
   \item Ich bin der dritte Aufzählungspunkte
 \end{itemize}
 \section{nummerierte Liste}
+\label{sec:enum-list}
 \begin{enumerate}
   \item Ich bin der erste nummerierte Punkt
   \item Ich bin der zweite nummerierte Punkt
   \item Ich bin der dritte nummerierte Punkt
 \end{enumerate}
 \section{Besondere Zeichen}
+\label{sec:special-cases}
 \subsection{deutsche Anführungszeichen}
 Deutsche Anführungszeichen werden mit folgenden Befehlen erzeugt: \\
 \begin{itemize}
@@ -76,4 +79,10 @@ Das Sonderzeichen \} kann mit dem Befehl \verb!\}! im Text erzeugt werden.
 Ein Zeilenumbruch kann mit dem Befehl \verb!\\! im Text erzeugt werden.
 \subsection{Textgruppen}
 Textgruppen können mit \verb!{!Text\verb!}! erstellt werden. Diese können dann mit Befehlen wie \verb!\emph! gestaltet werden.
+\section{Verhindern von Zeilenumbrüchen}
+Um Zeilenumbrüche ziwschen zwei Wörtern oder Ziffern verhindern zu können, gibt es zwei Arten von Leerzeichen welche dafür verwendert werden können:
+\begin{itemize}
+  \item mit einer \verb!~! kann ein Zeilenumbruch zwischen zwei Wörtern verhindert werden.
+  \item mit dem Befehl \verb!\nolinebreak! lässt sich ebenfalls ein Zeilenumbruch verhindern.
+\end{itemize}
 \end{document}
