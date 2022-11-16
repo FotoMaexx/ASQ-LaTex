@@ -1,0 +1,78 @@
+\documentclass[
+12pt
+]{scrreprt}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+
+\begin{document}
+\author{Maximilian Hauser}
+\title{Allgemeine Schlüsselqualifikation \\
+      \LaTeX - praktische Anwendung in wissenschaftlichen Arbeiten}
+
+\maketitle
+\tableofcontents
+
+\chapter{Kurstag 1 - Kapitel 1 \& 2}
+Diese Section beinhaltet einen fiktiven Text, welcher der Darstellung eines Fließtextes gilt um zu zeigen, dass ein automatischer Zeilenumbruch gemacht wird.
+\section{Aufzählungsliste}
+\begin{itemize}
+\item Ich bin der erste Aufzählungspunkte
+\item Ich bin der zweite Aufzählungspunkte
+\item Ich bin der dritte Aufzählungspunkte
+\end{itemize}
+\section{nummerierte Liste}
+\begin{enumerate}
+\item Ich bin der erste nummerierte Punkt
+\item Ich bin der zweite nummerierte Punkt
+\item Ich bin der dritte nummerierte Punkt
+\end{enumerate}
+\section{Besondere Zeichen}
+\subsection{deutsche Anführungszeichen}
+Deutsche Anführungszeichen werden mit folgenden Befehlen erzeugt: \\
+\begin{itemize}
+\item "` wird mit \verb!"`! oder \verb!\glqq! erzeugt.
+\item "' wird mit \verb!"'! oder \verb!\grqq! erzeugt.
+\end{itemize}
+Beispiel: \\
+"`Ich bin ein Satz in deutschen Anführungszeichen"' \\
+\glqq Ich bin ein Satz in deutschen Anführungszeichen\grqq
+\subsection{französische Anführungszeichen}
+Französische Anführungszeichen werden mit folgenden Befehlen erzeugt: \\
+\begin{itemize}
+\item "< wird mit \verb!"<! oder \verb!\flqq! erzeugt.
+\item "> wird mit \verb!">! oder \verb!\frqq! erzeugt.
+\end{itemize}
+Beispiel: \\
+"<Ich bin ein Satz in französischen Anführungszeichen"> \\
+\flqq Ich bin ein Satz in französischen Anführungszeichen\frqq
+\subsection{englische Anführungszeichen}
+Englische Anführungszeichen werden mit folgenden Befehlen erzeugt: \\
+\begin{itemize}
+\item `` wird mit \verb!``! erzeugt.
+\item '' wird mit \verb!''! erzeugt.
+\end{itemize}
+Beispiel: \\
+``Ich bin ein Satz in englischen Anführungszeichen''
+\subsection{Sonderzeichen}
+\subsubsection{\%}
+Das Sonderzeichen \% kann mit dem Befehl \verb!\%! im Text erzeugt werden.
+\subsubsection{\&}
+Das Sonderzeichen \& kann mit dem Befehl \verb!\&! im Text erzeugt werden.
+\subsubsection{\#}
+Das Sonderzeichen \# kann mit dem Befehl \verb!\#! im Text erzeugt werden.
+\subsubsection{\$}
+Das Sonderzeichen \$ kann mit dem Befehl \verb!\$! im Text erzeugt werden.
+\subsubsection{\_}
+Das Sonderzeichen \_ kann mit dem Befehl \verb!\_! im Text erzeugt werden.
+\subsubsection{\{}
+Das Sonderzeichen \{ kann mit dem Befehl \verb!\{! im Text erzeugt werden.
+\subsubsection{\}}
+Das Sonderzeichen \} kann mit dem Befehl \verb!\}! im Text erzeugt werden.
+\subsection{Zeilenumbruch}
+Ein Zeilenumbruch kann mit dem Befehl \verb!\\! im Text erzeugt werden.
+\subsection{Textgruppen}
+Textgruppen können mit \verb!{!Text\verb!}! erstellt werden. Diese können dann mit Befehlen wie \verb!\emph! gestaltet werden.
+\end{document}
