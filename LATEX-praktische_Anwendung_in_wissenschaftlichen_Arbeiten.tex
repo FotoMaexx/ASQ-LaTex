@@ -10,6 +10,9 @@ ngerman
 \usepackage{enumitem}
 \usepackage{multicol}
 
+\usepackage{amsmath}
+\usepackage{amssymb}
+
 \usepackage{varioref}
 \usepackage{hyperref}
 \usepackage{cleveref}
@@ -497,6 +500,49 @@ Gibt man einem Gliederungskommando (\verb!\chapter{}!, \verb!\section{}!, ...) e
 \section{Überprüfung Kurztitel}
 \label{sec:proof}
 Wenn wir die Kapitelüberschrift \verb!\chapter[Formelübungen]{Übungen zu Formeln aus! \\ \verb!Tutorial und Skript}! zur Überprüfung eingeben, erscheint der Titel \glqq Formelübungen\grqq \:im Inhaltsverzeichnis und der Titel \glqq Übungen zu Formeln aus Tutorial und Skript\grqq \:im Fließtext.
+
+\section{nummerierte Formeln}
+\label{sec:nummerierte-formeln}
+\centering
+\begin{equation}
+  \label{eq:pythagoras}
+  a^2+b^2=c^2
+\end{equation}
+Satz des Pythagoras
+
+\begin{equation}
+  \label{eq:mnf}
+  x_{1,2}=\frac{-b \pm \sqrt{b^2-4 \cdot a \cdot c}}{2 \cdot a}
+\end{equation}
+Mitternachtsformel
+
+\begin{equation}
+  \label{eq:am}
+  \bar{x}=\frac{1}{n} \sum_{i=1}^n x_i
+\end{equation}
+arithmetisches Mittel
+
+\begin{equation}
+  \label{eq:hr}
+  1+\frac{1}{2}++\frac{1}{3}+\frac{1}{4}+\cdots+\frac{1}{n} = \infty
+\end{equation}
+Harmonische Reihe
+
+\begin{equation}
+  \label{eq:hr2}
+  \zeta(1)=\sum_{n=1}^{\infty}\frac{1}{n^1}=\infty
+\end{equation}
+Harmonische Reihe
+
+\begin{equation*}
+  \label{eq:bnf}
+  \begin{aligned}
+    (a+b)^2         &= a^2+2ab+b^2\\
+    (a-b)^2         &= a^2-2ab+b^2\\
+    (a+b)\cdot(a-b) &= a^2-b^2
+  \end{aligned}
+\end{equation*}
+binomische Formeln
 
 \chapter[Formelübungen]{Übungen zu Formeln aus Tutorial und Skript}
 \label{cha:formelübungen}
