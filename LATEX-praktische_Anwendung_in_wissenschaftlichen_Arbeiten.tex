@@ -44,9 +44,13 @@ ngerman
 \title{Allgemeine Schlüsselqualifikation \\
 \LaTeX \:- praktische Anwendung in wissenschaftlichen Arbeiten}
 
-\tableofcontents
+\addtocounter{tocdepth}{1}
 
-\chapter{Kurstag 1 - Kapitel 1 \& 2}
+\tableofcontents
+\listoffigures
+\listoftables
+
+\chapter[Blatt 1]{Kurstag 1 - Kapitel 1 \& 2}
 \label{cha:chap1-2}
 \label{blatt:1}
 Diese Section beinhaltet einen fiktiven Text, welcher der Darstellung eines Fließtextes gilt um zu zeigen, dass ein automatischer Zeilenumbruch gemacht wird.
@@ -198,7 +202,7 @@ Daraufhin können wir die nummerierten Listen mit Argumenten in [eckigen Klammer
 \end{multicols}
 Sollten wir nun doch anstatt einen nummerierten Liste eine unnummerierte Liste mit eigenen Aufzählungszeichen wollen, lohnt es sich bei \cref{sec:itemize-labels} vorbei zu schauen.
 
-\chapter{Kurstag 1 - Kapitel 3 \& 4}
+\chapter[Blatt 2]{Kurstag 1 - Kapitel 3 \& 4}
 \label{cha:chap3-4}
 \label{blatt:2}
 
@@ -213,7 +217,7 @@ Dokument der Klasse scrreprt} widmen. Dafür binden wir das Paket \verb!scrlayer
 Um die Seitenzahlen im Fußbereich anzeigen zu können, verwenden wir \verb!\cfoot{\pagemark}!. Dass nun alles auch auf den ersten Seiten des Kapitels angezeigt wird, verwenden wir den Befehl \verb!\renewcommand*{\chapterpagestyle}{scrheadings}! um den Style der Chapter Seiten auch auf den Seitensil \verb!scrheadings!\footref{fn:scrheadings} stellen.
 
 
-\chapter{Kurstag 2 - Kapitel 5 \& 6}
+\chapter[Blatt 3]{Kurstag 2 - Kapitel 5 \& 6}
 \label{cha:chap5-6}
 \label{blatt:3}
 
@@ -249,7 +253,7 @@ einen neuen Typ erstellen.
     Visual Computing                                              & 9x im Semester                  & ---          \\
     \bottomrule
   \end{tabular}
-  \caption{Tabelle mit fester Spaltbreite}
+  \caption[Aufgabe 1 - Tabelle mit fester Spaltbreite]{Tabelle mit fester Spaltbreite}
 \end{table}
 
 \subsection{Tabelle mit fester Gesamtbreite}
@@ -273,7 +277,7 @@ Sollte man die Gesamtbreite definieren, die Spalten aber flexibel lassen wollen,
     Aufgabenblatt 3 & 2:30 & Ich hasse Tabellen \\
     \bottomrule
   \end{tabularx}
-  \caption{Tabelle mit fester Gesamtbreite}
+  \caption[Aufgabe 1 - Tabelle mit fester Gesamtbreite]{Tabelle mit fester Gesamtbreite}
 \end{table}
 
 \section{Tabelle mit flexibler Breite}
@@ -290,7 +294,7 @@ Für eine Tabelle mit flexibler Breite kann man beim erstellen die Argumente \ve
     reden hier die Zellen miteinander? & so sieht es aus & zu viel \LaTeX macht verrückt \\
 
   \end{tabular}
-  \caption{Tabelle mit flexibler Breite}
+  \caption[Aufgabe 1 - Tabelle mit flexibler Breite]{Tabelle mit flexibler Breite}
 \end{table}
 
 \section{Tabelle über mehrere Seiten}
@@ -316,7 +320,7 @@ Danach fügt man den Inhalt der Tabelle an und beendet das ganze mit einem \verb
   \toprule
   Dies erscheint & am Ende & der Tabelle \\
   \bottomrule
-  \caption{Tabelle über mehrere Seiten} \\
+  \caption[Aufgabe 2 - Tabelle über mehrere Seiten]{Tabelle über mehrere Seiten} \\
   \endlastfoot
   \label{tab:longtable}
   % Ab hier kommt der Inhalt der Tabelle
@@ -473,4 +477,12 @@ Nun vermischen wir alle Parameter, welche wir gerade kennengelernt haben.
   \caption{Grafik mit einer Wilden Mischung aus allen Parametern}
   \label{fig:graphics-param-all-2}
 \end{figure}
+
+\chapter[Blatt 4]{Kurstag 2 - Kapitel 7 \& 8}
+\label{cha:chap7-8}
+\label{blatt:4}
+
+\section{Kurztitel und Verzeichnisse}
+\label{sec:kurztitel}
+Gibt man den Captions oder den Gliederungsüberschriften einen Kurztitel in \verb![]!, dann wird dieser an Stelle des eigentlichen Titels im Inhalts-, bzw. Abbuldungs- und Tabellenverzeichnis angezeigt.
 \end{document}
