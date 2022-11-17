@@ -34,6 +34,7 @@ ngerman
 \usepackage{siunitx}
 \usepackage{tabularx}
 
+\usepackage{longtable}
 
 \begin{document}
 \author{Maximilian Hauser}
@@ -262,8 +263,8 @@ Sollte man die Gesamtbreite definieren, die Spalten aber flexibel lassen wollen,
     S[input-decimal-markers=(:), table-format=1:2, output-decimal-marker=\,:]<{\,h}
     Y
     }
-     \multicolumn{3}{c}{Arbeitsaufwand} \\
-     \hline\hline
+    \multicolumn{3}{c}{Arbeitsaufwand} \\
+    \hline\hline
     Aufgabenblatt 1 & 1:15 & war einfach \\
     Aufgabenblatt 2 & 2:30 & hab mich etwas verkünstelt \\
     Aufgabenblatt 3 & 2:30 & Ich hasse Tabellen \\
@@ -278,13 +279,101 @@ Für eine Tabelle mit flexibler Breite kann man beim erstellen die Argumente \ve
   \label{tab:table-flex}
   \centering
   \begin{tabular}{l | c | l}
-     über mir steht kein Text & dafür links \& rechts von mir & neben mir steht nur links etwas \\
-     \hline
-     über mir schon & über mir auch & über mir ebenfalls \\
-     \hline
-     reden hier die Zellen miteinander? & so sieht es aus & zu viel \LaTeX macht verrückt \\
+    über mir steht kein Text & dafür links \& rechts von mir & neben mir steht nur links etwas \\
+    \hline
+    über mir schon & über mir auch & über mir ebenfalls \\
+    \hline
+    reden hier die Zellen miteinander? & so sieht es aus & zu viel \LaTeX macht verrückt \\
 
   \end{tabular}
   \caption{Tabelle mit flexibler Breite}
 \end{table}
+
+\section{Tabelle über mehrere Seiten}
+\label{sec:longtable}
+Es gibt ein spezielles Paket, mit welchem man Tabellen erstellen kann, welche sich über mehrere Seiten strecken. Dieses nennt sich \verb!longtable!\footnote{Einbinden über \textbackslash usepackage\{longtable\}}. Um in diesem Paket eine Tabelle zu erstellen, schreiben wir \verb!\begin{longtable}{"spalten"}!. Nun müssen wir die Kopf- und Fußzeilen des Longtables bestimmten. Dies machen wir, indem wir die Erste Zeile erstellen und danach \verb!\endfirsthead! schreiben. Das ist die Kopfzeile der Tabelle, welche nur am Anfang der Tabelle angezeigt wird. Dies machen wir nun auch für die Befehle \verb!\endhead!, \verb!\endfoot! und \verb!\endlastfoot!. \verb!\endhead! steht hierbei für die Kopfzeile, welche auf den weiteren Seiten angezeigt wird. Ebenso verhält es sich mit \verb!\endfoot! und \verb!\endlastfoot!. \verb!\endfoot! steht hier für die Fußzeile der weiteren Seiten und \verb!\endlastfoot! für die letzte Zeile der Tabelle.\\
+Danach fügt man den Inhalt der Tabelle an und beendet das ganze mit einem \verb!\end{longtable}!.
+
+\begin{longtable}{lcl}
+% Definition des Tabellenkopfes auf der ersten Seite
+\hline\hline
+Dies erscheint & am Anfang & der Tabelle \\
+\hline\hline
+\endfirsthead
+% Definition des Tabellenkopfes auf den folgenden Seiten
+\hline
+Dies erscheint oben & auf den Seiten & der Tabelle \\
+\hline
+\endhead
+\hline
+Dies erscheint unten & auf den Seiten & der Tabelle \\
+\hline
+\endfoot
+\hline\hline
+Dies erscheint & am Ende & der Tabelle \\
+\hline\hline
+\caption{Tabelle über mehrere Seiten} \\
+\endlastfoot
+% Ab hier kommt der Inhalt der Tabelle
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+Ich bin & ein langer & Inhalt \\
+\end{longtable}
 \end{document}
