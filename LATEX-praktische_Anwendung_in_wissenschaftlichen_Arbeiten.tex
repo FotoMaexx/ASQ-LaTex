@@ -35,6 +35,9 @@ ngerman
 \usepackage{tabularx}
 
 \usepackage{longtable}
+\usepackage{booktabs}
+
+\usepackage{graphicx}
 
 \begin{document}
 \author{Maximilian Hauser}
@@ -228,24 +231,23 @@ einen neuen Typ erstellen.
   \centering
   \begin{tabular}{L{70mm} M{28mm} L{45mm}}
     \multicolumn{3}{c}{Fächer dieses Semester}\\
-    \hline\hline
+    \toprule
     \centering{Fach}                                              & Häufigkeit                      & Tage      \\
-    \hline
+    \midrule
     Algorithmen und Datenstrukturen                               & \multirow{4}{*}{2x pro Woche}   & Dienstag \& Donnerstag  \\
     Analysis 2 für Informatik                                     &                                 & Dienstag \& Freitag     \\
     Formale Grundlagen                                            &                                 & Montag \& Donnerstag  \\
     Mathematik für Informatik I                                   &                                 & Montag \& Dienstag    \\
-    \hline
+    \midrule
     Einführung in die Forschungsmethoden                          & \multirow{2}{*}{1x pro Woche}   & Dienstag    \\
     Web Engineering                                               &                                 & Donnerstag  \\
-    \hline
+    \midrule
     \LaTeX - praktische Anwendung in wissenschaftlichen Arbeiten  & 4x im Semester                  & Freitag \& Samstag    \\
-    \hline
+    \midrule
     Psychologie für Nichtpsycholog*innen                          & 2x im Semester                  & Freitag \& Samstag    \\
-    \hline
+    \midrule
     Visual Computing                                              & 9x im Semester                  & ---          \\
-
-    \hline
+    \bottomrule
   \end{tabular}
   \caption{Tabelle mit fester Spaltbreite}
 \end{table}
@@ -263,11 +265,13 @@ Sollte man die Gesamtbreite definieren, die Spalten aber flexibel lassen wollen,
     S[input-decimal-markers=(:), table-format=1:2, output-decimal-marker=\,:]<{\,h}
     Y
     }
+    \toprule
     \multicolumn{3}{c}{Arbeitsaufwand} \\
-    \hline\hline
+    \midrule\midrule
     Aufgabenblatt 1 & 1:15 & war einfach \\
     Aufgabenblatt 2 & 2:30 & hab mich etwas verkünstelt \\
     Aufgabenblatt 3 & 2:30 & Ich hasse Tabellen \\
+    \bottomrule
   \end{tabularx}
   \caption{Tabelle mit fester Gesamtbreite}
 \end{table}
@@ -295,85 +299,178 @@ Es gibt ein spezielles Paket, mit welchem man Tabellen erstellen kann, welche si
 Danach fügt man den Inhalt der Tabelle an und beendet das ganze mit einem \verb!\end{longtable}!.
 
 \begin{longtable}{lcl}
-% Definition des Tabellenkopfes auf der ersten Seite
-\hline\hline
-Dies erscheint & am Anfang & der Tabelle \\
-\hline\hline
-\endfirsthead
-% Definition des Tabellenkopfes auf den folgenden Seiten
-\hline
-Dies erscheint oben & auf den Seiten & der Tabelle \\
-\hline
-\endhead
-\hline
-Dies erscheint unten & auf den Seiten & der Tabelle \\
-\hline
-\endfoot
-\hline\hline
-Dies erscheint & am Ende & der Tabelle \\
-\hline\hline
-\caption{Tabelle über mehrere Seiten} \\
-\endlastfoot
-% Ab hier kommt der Inhalt der Tabelle
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
-Ich bin & ein langer & Inhalt \\
+  % Definition des Tabellenkopfes auf der ersten Seite
+  \toprule
+  Dies erscheint & am Anfang & der Tabelle \\
+  \bottomrule
+  \endfirsthead
+  % Definition des Tabellenkopfes auf den folgenden Seiten
+  \midrule
+  Dies erscheint oben & auf den Seiten & der Tabelle \\
+  \midrule
+  \endhead
+  \midrule
+  Dies erscheint unten & auf den Seiten & der Tabelle \\
+  \midrule
+  \endfoot
+  \toprule
+  Dies erscheint & am Ende & der Tabelle \\
+  \bottomrule
+  \caption{Tabelle über mehrere Seiten} \\
+  \endlastfoot
+  \label{tab:longtable}
+  % Ab hier kommt der Inhalt der Tabelle
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
 \end{longtable}
+
+\newpage
+\section{Grafiken in \LaTeX}
+\label{sec:graphics}
+Um Grafiken in \LaTeX einbinden zu können benötigen wir das \verb!graphicx!\footnote{Einbinden über \textbackslash usepackage\{graphicx\}} Paket. Nun haben wir die Möglichkeit mit \verb!\includegraphics{pfad}! ein Bild innerhalb einer \verb!figure! darzustellen.
+
+\subsection{Parameter für \textbackslash includegraphics}
+\label{subsec:graphics-param}
+
+\subsubsection{width}
+\label{subsubsec:graphics-param-width}
+Mit dem Parameter \verb!width! lässt sich die Breite des Bildes angeben. Definiert man zusätzlich keine \verb!height!(Siehe \vref{subsubsec:graphics-param-height}), wird diese gleichmäßig zur \verb!width! skaliert.
+\begin{figure} [hbt!]
+  \centering
+  \includegraphics[width=\linewidth]{img/latex-logo}
+  \caption{Grafik mit einer Breite von 100\% der Seite}
+  \label{fig:graphics-param-width-1}
+\end{figure}
+\begin{figure} [hbt!]
+  \centering
+  \includegraphics[width=0.8\linewidth]{img/latex-logo}
+  \caption{Grafik mit einer Breite von 80\% der Seite}
+  \label{fig:graphics-param-width-2}
+\end{figure}
+
+\subsubsection{height}
+\label{subsubsec:graphics-param-height}
+Mit dem Parameter \verb!height! lässt sich die Höhe des Bildes angeben. Definiert man zusätzlich keine \verb!width!(Siehe \vref{subsubsec:graphics-param-width}), wird diese gleichmäßig zur \verb!height! skaliert.
+\begin{figure} [hbt!]
+  \centering
+  \includegraphics[height=100px]{img/latex-logo}
+  \caption{Grafik mit einer Höhe von 100px}
+  \label{fig:graphics-param-height-1}
+\end{figure}
+\begin{figure} [hbt!]
+  \centering
+  \includegraphics[height=80px]{img/latex-logo}
+  \caption{Grafik mit einer Höhe von 80px}
+  \label{fig:graphics-param-height-2}
+\end{figure}
+
+\subsubsection{scale}
+\label{subsubsec:graphics-param-scale}
+Mit dem Parameter \verb!scale! lässt sich die Skalierung des Bildes angeben.
+\begin{figure} [hbt!]
+  \centering
+  \includegraphics[scale=0.1]{img/latex-logo}
+  \caption{Grafik mit einer Skalierung von 10\%}
+  \label{fig:graphics-param-scale-1}
+\end{figure}
+\begin{figure} [hbt!]
+  \centering
+  \includegraphics[scale=0.05]{img/latex-logo}
+  \caption{Grafik mit einer Skalierung von 5\%}
+  \label{fig:graphics-param-scale-2}
+\end{figure}
+
+\newpage
+
+\subsubsection{angle}
+\label{subsubsec:graphics-param-angle}
+Mit dem Parameter \verb!angle! lässt sich die Drehung des Bildes angeben.
+\begin{figure} [hbt!]
+  \centering
+  \includegraphics[width=0.8\linewidth, angle=90]{img/latex-logo}
+  \caption{Grafik mit einer Drehung von 90°}
+  \label{fig:graphics-param-angle-1}
+\end{figure}
+\begin{figure} [hbt!]
+  \centering
+  \includegraphics[width=0.8\linewidth, angle=180]{img/latex-logo}
+  \caption{Grafik mit einer Drehung von 180°}
+  \label{fig:graphics-param-angle-2}
+\end{figure}
+
+\newpage
+
+\subsubsection{alles zusammen}
+\label{subsubsec:graphics-param-all}
+Nun vermischen wir alle Parameter, welche wir gerade kennengelernt haben.
+\begin{figure} [hbt!]
+  \centering
+  \includegraphics[width=0.6\linewidth,height=250px, angle=90]{img/latex-logo}
+  \caption{Grafik mit einer Wilden Mischung aus allen Parametern}
+  \label{fig:graphics-param-all-1}
+\end{figure}
+\begin{figure} [hbt!]
+  \centering
+  \includegraphics[width=0.54821\linewidth,height=541px, angle=4161]{img/latex-logo}
+  \caption{Grafik mit einer Wilden Mischung aus allen Parametern}
+  \label{fig:graphics-param-all-2}
+\end{figure}
 \end{document}
