@@ -29,6 +29,11 @@ ngerman
 \cfoot{\pagemark}
 \renewcommand*{\chapterpagestyle}{scrheadings}
 
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{tabularx}
+
 
 \begin{document}
 \author{Maximilian Hauser}
@@ -196,8 +201,90 @@ Sollten wir nun doch anstatt einen nummerierten Liste eine unnummerierte Liste m
 \section{Nummerierung der Fußnoten über alle Kapitel}
 \label{sec:footnotes}
 Eine Fußnote\footnote{Eine Fußnote ist eine Anmerkung, die im Druck-Layout aus dem Fließtext ausgelagert wird, um den Text flüssig lesbar zu gestalten. Eine Fußnote kann als „Anmerkung, Legende, Bemerkung, Quellenangabe, Übersetzung oder weiterführende Erklärung zu einem Wort oder einer Textpassage“ dienen.} kann man mit dem Befehl \verb!\footnote{name}! erstellen. Dass diese nun auch in einer PDF auf die Fußnote verlinkt werden, binden wir die Pakete \verb!varioref!\footnote{Einbinden über \textbackslash usepackage\{varioref\}}, \verb!hyperref!\footnote{Einbinden über \textbackslash usepackage\{hyperref\}} und \verb!cleverref!\footnote{Einbinden über \textbackslash usepackage\{cleverref\}} ein. Dass die Fußnotennummerierung nun nicht in jedem Kapitel bei 1 wieder beginnt, binden wird das Paket \verb!chngcntr!\footnote{Einbinden über \textbackslash usepackage\{chngcntr\}} ein und nutzen den Befehl \verb!\counterwithout{footnote}{chapter}!. Somit wird der Counter der Fußnoten nicht bei jedem Kapitel wieder auf 1 zurückgesetzt.
+
 \section{Ergänzung des \LaTeX \:Dokuments}
+\label{sec:ergaenzung}
 Die Aufgaben a)\footnote{mehrseitiger Text}, b)\footnote{zwei Kapitel}, c)\footnote{weitere Abschnitte und Unterabschnitte} und e)\footnote{beliebige Texte mit ordentlicher Länge} wurden in diesem ganzen Dokument bereits bearbeitet. Um nun  die Anfangsthemen überfliegen zu können, kann man diese im \cref{cha:chap1-2} nochmals nachlesen. Da wir nun die Aufgabe d)\footnote{an mehreren Stellen Querverweise auf verschiedene Teile Ihres Textes} ebenfalls erledigt haben, können wir uns nun Aufgabe f)\footnote{Testen Sie die scrlayer-scrpage-Variante für lebende Kolumnentitel in Ihrem
 Dokument der Klasse scrreprt} widmen. Dafür binden wir das Paket \verb!scrlayer-scrpage!\footnote{\label{fn:scrlayer-scrpage}Einbinden über \textbackslash usepackage\{scrlayer-scrpage\}} ein. Wir wählen auch gleich noch den Seitenstil scrheadings\footnote{\label{fn:scrheadings}Auswahl über \textbackslash pagestyle\{scrheadings\}} aus, wodurch LaTeX mitgeteilt wird, dass Kopf- und Fußzeilen mit dem \verb!scrlayer-scrpage!\footref{fn:scrlayer-scrpage} Paket gesetzt werden sollen. Der Befehl \verb!\clearpairofpagestyles! leert alle sechs Platzhalter, sodass wir diese nach unseren Wünschen befüllen können. Wenn wir nun \verb!\chead{\headmark}! mit den weiteren Befehlen \verb!\automark[chapter]{chapter}! und \\ \verb!\renewcommand*{\chaptermarkformat}{\chapapp~\thechapter:\enskip}! verwenden, wird der Name des aktuellen Kapitels auf den Unterseiten des Kapitels oben in der Mitte angezeigt.
 Um die Seitenzahlen im Fußbereich anzeigen zu können, verwenden wir \verb!\cfoot{\pagemark}!. Dass nun alles auch auf den ersten Seiten des Kapitels angezeigt wird, verwenden wir den Befehl \verb!\renewcommand*{\chapterpagestyle}{scrheadings}! um den Style der Chapter Seiten auch auf den Seitensil \verb!scrheadings!\footref{fn:scrheadings} stellen.
+
+
+\chapter{Kurstag 2 - Kapitel 5 \& 6}
+\label{cha:chap5-6}
+\label{blatt:3}
+
+\section{Tabelle mit fester Breite}
+\label{sec:table-fixed}
+\subsection{Tabelle mit fester Spaltbreite}
+\label{subsec:table-col-fixed}
+Für eine Tabelle mit fester Breite kann man beim erstellen die Argumente \verb!p{breite}!\footnote{Text vertikal oben ausgerichtet}, \verb!b{breite}!\footnote{Text vertikal unten ausgerichtet} und \verb!m{breite}!\footnote{Text vertikal mittig ausgerichtet} anstatt \verb!l!\footnote{\label{fn:tab-l}Text ohne feste Spaltbreite links ausgerichtet}, \verb!r!\footnote{\label{fn:tab-r}Text ohne feste Spaltbreite rechts ausgerichtet} und \verb!c!\footnote{\label{fn:tab-c}Text ohne feste Spaltbreite mittig ausgerichtet} vergeben. In den Klammern kann man nun die Spaltenbreite angeben. Sollte man für \verb!p!, \verb!b! und \verb!m! nun auch noch die Ausrichtung des Texts ändern wollen, kann man mit \verb!\newcolumntype{"neuer Typbuchstabe"}[1]{>{! \\ \verb!"\centering, \raggedleft oder \raggedright"\arraybackslash}"p, b oder m"{#1}}!\footnote{\label{fn:text-alignment}\textbackslash centering: Text zentriert \\ \textbackslash raggedleft: rechts ausgerichtet \\ \textbackslash raggedright: links ausgerichtet
+}
+einen neuen Typ erstellen.
+\begin{table}[hbt!]
+  \label{tab:table-col-fixed}
+  \newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}}
+  \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+  \centering
+  \begin{tabular}{L{70mm} M{28mm} L{45mm}}
+    \multicolumn{3}{c}{Fächer dieses Semester}\\
+    \hline\hline
+    \centering{Fach}                                              & Häufigkeit                      & Tage      \\
+    \hline
+    Algorithmen und Datenstrukturen                               & \multirow{4}{*}{2x pro Woche}   & Dienstag \& Donnerstag  \\
+    Analysis 2 für Informatik                                     &                                 & Dienstag \& Freitag     \\
+    Formale Grundlagen                                            &                                 & Montag \& Donnerstag  \\
+    Mathematik für Informatik I                                   &                                 & Montag \& Dienstag    \\
+    \hline
+    Einführung in die Forschungsmethoden                          & \multirow{2}{*}{1x pro Woche}   & Dienstag    \\
+    Web Engineering                                               &                                 & Donnerstag  \\
+    \hline
+    \LaTeX - praktische Anwendung in wissenschaftlichen Arbeiten  & 4x im Semester                  & Freitag \& Samstag    \\
+    \hline
+    Psychologie für Nichtpsycholog*innen                          & 2x im Semester                  & Freitag \& Samstag    \\
+    \hline
+    Visual Computing                                              & 9x im Semester                  & ---          \\
+
+    \hline
+  \end{tabular}
+  \caption{Tabelle mit fester Spaltbreite}
+\end{table}
+
+\subsection{Tabelle mit fester Gesamtbreite}
+\label{sec:table-total-fixed}
+Sollte man die Gesamtbreite definieren, die Spalten aber flexibel lassen wollen, müssen wir anstatt \verb!\begin{tabular}!, \verb!\begin{tabularx}! verwenden. Nun können wir ein Argument wie z.B. \verb!\begin{tabularx}{0.8\linewidth}! hinzufügen um die Tabelle hier 80\% der Seitenbreite breit zu machen. Nun können wir die Spalten, welche nun flexibel sein sollen durch ein \verb!X! definieren. Sollten wir hier wieder eine gewissen Textausrichtung haben wollen, können wir hier wieder mit dem Befehl \verb!\newcolumntype{"neuer Typbuchstabe"}!\\ \verb!{>{"\centering, \raggedleft oder \raggedright"\arraybackslash}X}!\footref{fn:text-alignment} ein neuen Spaltentyp erstellen.
+\begin{table}[hbt!]
+  \label{tab:table-total-fixed}
+  \newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}}
+  \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+  \centering
+  \begin{tabularx}{0.8\linewidth}{
+    X
+    S[input-decimal-markers=(:), table-format=1:2, output-decimal-marker=\,:]<{\,h}
+    Y
+    }
+     \multicolumn{3}{c}{Arbeitsaufwand} \\
+     \hline\hline
+    Aufgabenblatt 1 & 1:15 & war einfach \\
+    Aufgabenblatt 2 & 2:30 & hab mich etwas verkünstelt \\
+    Aufgabenblatt 3 & 2:30 & Ich hasse Tabellen \\
+  \end{tabularx}
+  \caption{Tabelle mit fester Gesamtbreite}
+\end{table}
+
+\section{Tabelle mit flexibler Breite}
+\label{sec:table-flex}
+Für eine Tabelle mit flexibler Breite kann man beim erstellen die Argumente \verb!l!\footref{fn:tab-l}, \verb!r!\footref{fn:tab-r} und \verb!c!\footref{fn:tab-c} vergeben.
+\begin{table}[hbt!]
+  \label{tab:table-flex}
+  \centering
+  \begin{tabular}{l | c | l}
+     über mir steht kein Text & dafür links \& rechts von mir & neben mir steht nur links etwas \\
+     \hline
+     über mir schon & über mir auch & über mir ebenfalls \\
+     \hline
+     reden hier die Zellen miteinander? & so sieht es aus & zu viel \LaTeX macht verrückt \\
+
+  \end{tabular}
+  \caption{Tabelle mit flexibler Breite}
+\end{table}
 \end{document}
