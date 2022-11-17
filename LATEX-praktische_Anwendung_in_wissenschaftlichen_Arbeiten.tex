@@ -17,9 +17,7 @@ ngerman
 \usepackage{chngcntr}
 \counterwithout{footnote}{chapter}
 
-\makeatletter
-\newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
-\makeatother
+\usepackage{footmisc}
 
 \usepackage{scrlayer-scrpage}
 \pagestyle{scrheadings}
@@ -28,6 +26,8 @@ ngerman
 \automark[chapter]{chapter}
 \renewcommand*{\chaptermarkformat}{\chapapp~\thechapter:\enskip}
 \chead{\headmark}
+\cfoot{\pagemark}
+\renewcommand*{\chapterpagestyle}{scrheadings}
 
 
 \begin{document}
@@ -35,7 +35,6 @@ ngerman
 \title{Allgemeine Schlüsselqualifikation \\
 \LaTeX \:- praktische Anwendung in wissenschaftlichen Arbeiten}
 
-\maketitle[-1]
 \tableofcontents
 
 \chapter{Kurstag 1 - Kapitel 1 \& 2}
@@ -199,5 +198,6 @@ Sollten wir nun doch anstatt einen nummerierten Liste eine unnummerierte Liste m
 Eine Fußnote\footnote{Eine Fußnote ist eine Anmerkung, die im Druck-Layout aus dem Fließtext ausgelagert wird, um den Text flüssig lesbar zu gestalten. Eine Fußnote kann als „Anmerkung, Legende, Bemerkung, Quellenangabe, Übersetzung oder weiterführende Erklärung zu einem Wort oder einer Textpassage“ dienen.} kann man mit dem Befehl \verb!\footnote{name}! erstellen. Dass diese nun auch in einer PDF auf die Fußnote verlinkt werden, binden wir die Pakete \verb!varioref!\footnote{Einbinden über \textbackslash usepackage\{varioref\}}, \verb!hyperref!\footnote{Einbinden über \textbackslash usepackage\{hyperref\}} und \verb!cleverref!\footnote{Einbinden über \textbackslash usepackage\{cleverref\}} ein. Dass die Fußnotennummerierung nun nicht in jedem Kapitel bei 1 wieder beginnt, binden wird das Paket \verb!chngcntr!\footnote{Einbinden über \textbackslash usepackage\{chngcntr\}} ein und nutzen den Befehl \verb!\counterwithout{footnote}{chapter}!. Somit wird der Counter der Fußnoten nicht bei jedem Kapitel wieder auf 1 zurückgesetzt.
 \section{Ergänzung des \LaTeX \:Dokuments}
 Die Aufgaben a)\footnote{mehrseitiger Text}, b)\footnote{zwei Kapitel}, c)\footnote{weitere Abschnitte und Unterabschnitte} und e)\footnote{beliebige Texte mit ordentlicher Länge} wurden in diesem ganzen Dokument bereits bearbeitet. Um nun  die Anfangsthemen überfliegen zu können, kann man diese im \cref{cha:chap1-2} nochmals nachlesen. Da wir nun die Aufgabe d)\footnote{an mehreren Stellen Querverweise auf verschiedene Teile Ihres Textes} ebenfalls erledigt haben, können wir uns nun Aufgabe f)\footnote{Testen Sie die scrlayer-scrpage-Variante für lebende Kolumnentitel in Ihrem
-Dokument der Klasse scrreprt} widmen. Dafür binden wir das Paket \verb!scrlayer-scrpage!\footnote{\label{fn:scrlayer-scrpage}Einbinden über \textbackslash usepackage\{scrlayer-scrpage\}} ein. Wir wählen auch gleich noch den Seitenstil scrheadings\footnote{Auswahl über \textbackslash pagestyle\{scrheadings\}} aus, wodurch LaTeX mitgeteilt wird, dass Kopf- und Fußzeilen mit dem \verb!scrlayer-scrpage!\footnoteref{fn:scrlayer-scrpage} Paket gesetzt werden sollen. Der Befehl \verb!\clearpairofpagestyles! leert alle sechs Platzhalter, sodass wir diese nach unseren Wünschen befüllen können. Wenn wir nun \verb!\chead{\headmark}! mit den weiteren Befehlen \verb!\automark[chapter]{chapter}! und \\ \verb!\renewcommand*{\chaptermarkformat}{\chapapp~\thechapter:\enskip}! verwenden, wird der Name des aktuellen Kapitels auf den Unterseiten des Kapitels oben in der Mitte angezeigt.
+Dokument der Klasse scrreprt} widmen. Dafür binden wir das Paket \verb!scrlayer-scrpage!\footnote{\label{fn:scrlayer-scrpage}Einbinden über \textbackslash usepackage\{scrlayer-scrpage\}} ein. Wir wählen auch gleich noch den Seitenstil scrheadings\footnote{\label{fn:scrheadings}Auswahl über \textbackslash pagestyle\{scrheadings\}} aus, wodurch LaTeX mitgeteilt wird, dass Kopf- und Fußzeilen mit dem \verb!scrlayer-scrpage!\footref{fn:scrlayer-scrpage} Paket gesetzt werden sollen. Der Befehl \verb!\clearpairofpagestyles! leert alle sechs Platzhalter, sodass wir diese nach unseren Wünschen befüllen können. Wenn wir nun \verb!\chead{\headmark}! mit den weiteren Befehlen \verb!\automark[chapter]{chapter}! und \\ \verb!\renewcommand*{\chaptermarkformat}{\chapapp~\thechapter:\enskip}! verwenden, wird der Name des aktuellen Kapitels auf den Unterseiten des Kapitels oben in der Mitte angezeigt.
+Um die Seitenzahlen im Fußbereich anzeigen zu können, verwenden wir \verb!\cfoot{\pagemark}!. Dass nun alles auch auf den ersten Seiten des Kapitels angezeigt wird, verwenden wir den Befehl \verb!\renewcommand*{\chapterpagestyle}{scrheadings}! um den Style der Chapter Seiten auch auf den Seitensil \verb!scrheadings!\footref{fn:scrheadings} stellen.
 \end{document}
