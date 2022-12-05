@@ -1,0 +1,550 @@
+\documentclass[
+12pt,
+ngerman
+]{scrreprt}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+
+\usepackage{enumitem}
+\usepackage{multicol}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{varioref}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+\usepackage{chngcntr}
+\counterwithout{footnote}{chapter}
+
+\usepackage{footmisc}
+
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+
+\automark[chapter]{chapter}
+\renewcommand*{\chaptermarkformat}{\chapapp~\thechapter:\enskip}
+\chead{\headmark}
+\cfoot{\pagemark}
+\renewcommand*{\chapterpagestyle}{scrheadings}
+
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{siunitx}
+\usepackage{tabularx}
+
+\usepackage{longtable}
+\usepackage{booktabs}
+
+\usepackage{graphicx}
+
+\begin{document}
+\author{Maximilian Hauser}
+\title{Allgemeine Schlüsselqualifikation \\
+\LaTeX \:- praktische Anwendung in wissenschaftlichen Arbeiten}
+
+\addtocounter{tocdepth}{1}
+
+\maketitle
+\tableofcontents
+\listoffigures
+\listoftables
+
+\chapter[Blatt 1]{Kurstag 1 - Kapitel 1 \& 2}
+\label{cha:chap1-2}
+\label{blatt:1}
+Diese Section beinhaltet einen fiktiven Text, welcher der Darstellung eines Fließtextes gilt um zu zeigen, dass ein automatischer Zeilenumbruch gemacht wird.
+
+\section{Aufzählungsliste}
+\label{sec:item-list}
+\begin{itemize}
+  \item Ich bin der erste Aufzählungspunkte
+  \item Ich bin der zweite Aufzählungspunkte
+  \item Ich bin der dritte Aufzählungspunkte
+\end{itemize}
+
+\section{nummerierte Liste}
+\label{sec:enum-list}
+\begin{enumerate}
+  \item Ich bin der erste nummerierte Punkt
+  \item Ich bin der zweite nummerierte Punkt
+  \item Ich bin der dritte nummerierte Punkt
+\end{enumerate}
+
+\section{Besondere Zeichen}
+\label{sec:special-cases}
+
+\subsection{deutsche Anführungszeichen}
+\label{subsec:ger-qoute}
+Deutsche Anführungszeichen werden mit folgenden Befehlen erzeugt: \\
+\begin{itemize}
+  \item "` wird mit \verb!"`! oder \verb!\glqq! erzeugt.
+  \item "' wird mit \verb!"'! oder \verb!\grqq! erzeugt.
+\end{itemize}
+Beispiel: \\
+"`Ich bin ein Satz in deutschen Anführungszeichen"' \\
+\glqq Ich bin ein Satz in deutschen Anführungszeichen\grqq
+
+\subsection{französische Anführungszeichen}
+\label{subsec:fr-qoute}
+Französische Anführungszeichen werden mit folgenden Befehlen erzeugt: \\
+\begin{itemize}
+  \item "< wird mit \verb!"<! oder \verb!\flqq! erzeugt.
+  \item "> wird mit \verb!">! oder \verb!\frqq! erzeugt.
+\end{itemize}
+Beispiel: \\
+"<Ich bin ein Satz in französischen Anführungszeichen"> \\
+\flqq Ich bin ein Satz in französischen Anführungszeichen\frqq
+
+\subsection{englische Anführungszeichen}
+\label{subsec:gb-qoute}
+Englische Anführungszeichen werden mit folgenden Befehlen erzeugt: \\
+\begin{itemize}
+  \item `` wird mit \verb!``! erzeugt.
+  \item '' wird mit \verb!''! erzeugt.
+\end{itemize}
+Beispiel: \\
+``Ich bin ein Satz in englischen Anführungszeichen''
+
+\subsection{Sonderzeichen}
+\label{subsec:special-cases}
+
+\subsubsection{\%}
+Das Sonderzeichen \% kann mit dem Befehl \verb!\%! im Text erzeugt werden.
+
+\subsubsection{\&}
+Das Sonderzeichen \& kann mit dem Befehl \verb!\&! im Text erzeugt werden.
+
+\subsubsection{\#}
+Das Sonderzeichen \# kann mit dem Befehl \verb!\#! im Text erzeugt werden.
+
+\subsubsection{\$}
+Das Sonderzeichen \$ kann mit dem Befehl \verb!\$! im Text erzeugt werden.
+
+\subsubsection{\_}
+Das Sonderzeichen \_ kann mit dem Befehl \verb!\_! im Text erzeugt werden.
+
+\subsubsection{\{}
+Das Sonderzeichen \{ kann mit dem Befehl \verb!\{! im Text erzeugt werden.
+
+\subsubsection{\}}
+Das Sonderzeichen \} kann mit dem Befehl \verb!\}! im Text erzeugt werden.
+
+\subsection{Zeilenumbruch}
+\label{subsec:linebreak}
+Ein Zeilenumbruch kann mit dem Befehl \verb!\\! im Text erzeugt werden.
+
+\subsection{Textgruppen}
+\label{subsec:textgroups}
+Textgruppen können mit \verb!{!Text\verb!}! erstellt werden. Diese können dann mit Befehlen wie \verb!\emph! gestaltet werden.
+
+\section{Verhindern von Zeilenumbrüchen}
+\label{sec:no-linebreak}
+Um Zeilenumbrüche ziwschen zwei Wörtern oder Ziffern verhindern zu können, gibt es zwei Arten von Leerzeichen welche dafür verwendert werden können:
+\begin{itemize}
+  \item mit einer \verb!~! kann ein Zeilenumbruch zwischen zwei Wörtern verhindert werden.
+  \item mit dem Befehl \verb!\nolinebreak! lässt sich ebenfalls ein Zeilenumbruch verhindern.
+\end{itemize}
+Sollte man nun vergessen haben, wie man einen Zeilenumbruch erstellt, falls dieser doch gewünscht ist, kann man bei \cref{subsec:linebreak} nochmals nachlesen.
+
+\section{Zeilenabstand}
+\label{sec:linespace}
+Um den Zeilenabstand auf "`eineinhalbzeilig"' bzw. 1,5 ändern zu können, kann das Paket \verb!setspace! verwendet werden. Dieses wird über \verb!\usepackage{setspace}! eingebunden. Den Zeilenabstand kann man dort ebenfalls für das ganze Dokument definieren indem man es in die [] hineinschreibt. Hier gibt es folgende Optionen:
+\begin{itemize}
+  \item \verb!\usepackage[doublespace]{setspace}!: Der Zeilenabstand wird auf 2 gesetzt.
+  \item \verb!\usepackage[onehalfspace]{setspace}!: Der Zeilenabstand wird auf 1,5 gesetzt.
+  \item \verb!\usepackage[singelspace]{setspace}!: Der Zeilenabstand wird auf 1 gesetzt.
+\end{itemize}
+Um nur für einen Bereich den Zeilenabstand anpassen zu können, kann man mit
+\begin{verbatim}
+  \begin{setspace}{...}
+    ...
+  \end{setspace}{...}
+\end{verbatim}
+den Bereich definieren.
+
+\section{Aufzählungszeichen ändern}
+\label{sec:itemize-labels}
+Um die Aufzählungszeichen ändern zu können, müssen wir den Befel "`renewen"'. Dies können wir mit \verb!\renewcommand{}! vornehmen. Um das Aufzählungszeichen der ersten Ebene zu ändern geben wir den Befehl \verb!\renewcommand{\labelitemi}{Gewünsches Item}! ein. Bei den weiteren Ebenenen wird die Römische Ziffer am Ende des \verb!\labelitem! Befehls um 1 erhöht, sprich: \verb!\labelitemi!, \verb!\labelitemii!, \verb!\labelitemiii!, \verb!\labelitemiv!\\
+Um das gewünsche Ergebnis aus dem Aufgabenblatt zu erzielen müssen wir folgende Befehle vor der Liste ausführen:
+\begin{verbatim}
+  \renewcommand{\labelitemi}{$\rightarrow$}
+  \renewcommand{\labelitemii}{$\rightarrow$}
+\end{verbatim}
+Somit erzielen wir folgendes Ergebnis:
+\begin{itemize}
+  \renewcommand{\labelitemi}{$\rightarrow$}
+  \renewcommand{\labelitemii}{$\rightarrow$}
+  \item Erste Ebene
+  \begin{itemize}
+    \item Zweite Ebene
+  \end{itemize}
+\end{itemize}
+Wollen wir den Effekt nur innerhalb einer bestimmten Liste erzielen, dann können wir die \verb!\renewcommand!-Befehle nach dem \verb!\begin{itemize}! einfügen.
+
+\section{Nummerierung von arabisch auf römisch umstellen}
+\label{sec:enum-label}
+Um die Zahlen von einer nummerierten Liste von arabischen Zahlen auf römische Zahlen zu ändern, müssen wir zuerst das Paket\verb!enumitem! laden. Dieses wird über \verb!\usepackage{enumitem}! eingebunden. \\
+Daraufhin können wir die nummerierten Listen mit Argumenten in [eckigen Klammern] erweitern. In unserem Fall brauchen wir hierfür das Argument \verb![label=\roman*]! bzw. \verb![label=\Roman*]! für große Ziffern. Dadruch bekommen wir folgende Ergebnisse:
+\begin{multicols}{2}
+  \begin{enumerate}[label=\roman*]
+    \item Erster Punkt
+    \item Zweiter Punkt
+    \item Dritter Punkt
+  \end{enumerate}
+  \emph{Liste mit kleinen römischen Ziffern}
+  \begin{enumerate}[label=\Roman*]
+    \item Erster Punkt
+    \item Zweiter Punkt
+    \item Dritter Punkt
+  \end{enumerate}
+  \emph{Liste mit großen römischen Ziffern}
+\end{multicols}
+Sollten wir nun doch anstatt einen nummerierten Liste eine unnummerierte Liste mit eigenen Aufzählungszeichen wollen, lohnt es sich bei \cref{sec:itemize-labels} vorbei zu schauen.
+
+\chapter[Blatt 2]{Kurstag 1 - Kapitel 3 \& 4}
+\label{cha:chap3-4}
+\label{blatt:2}
+
+\section{Nummerierung der Fußnoten über alle Kapitel}
+\label{sec:footnotes}
+Eine Fußnote\footnote{Eine Fußnote ist eine Anmerkung, die im Druck-Layout aus dem Fließtext ausgelagert wird, um den Text flüssig lesbar zu gestalten. Eine Fußnote kann als „Anmerkung, Legende, Bemerkung, Quellenangabe, Übersetzung oder weiterführende Erklärung zu einem Wort oder einer Textpassage“ dienen.} kann man mit dem Befehl \verb!\footnote{name}! erstellen. Dass diese nun auch in einer PDF auf die Fußnote verlinkt werden, binden wir die Pakete \verb!varioref!\footnote{Einbinden über \textbackslash usepackage\{varioref\}}, \verb!hyperref!\footnote{Einbinden über \textbackslash usepackage\{hyperref\}} und \verb!cleverref!\footnote{Einbinden über \textbackslash usepackage\{cleverref\}} ein. Dass die Fußnotennummerierung nun nicht in jedem Kapitel bei 1 wieder beginnt, binden wird das Paket \verb!chngcntr!\footnote{Einbinden über \textbackslash usepackage\{chngcntr\}} ein und nutzen den Befehl \verb!\counterwithout{footnote}{chapter}!. Somit wird der Counter der Fußnoten nicht bei jedem Kapitel wieder auf 1 zurückgesetzt.
+
+\section{Ergänzung des \LaTeX \:Dokuments}
+\label{sec:ergaenzung}
+Die Aufgaben a)\footnote{mehrseitiger Text}, b)\footnote{zwei Kapitel}, c)\footnote{weitere Abschnitte und Unterabschnitte} und e)\footnote{beliebige Texte mit ordentlicher Länge} wurden in diesem ganzen Dokument bereits bearbeitet. Um nun  die Anfangsthemen überfliegen zu können, kann man diese im \cref{cha:chap1-2} nochmals nachlesen. Da wir nun die Aufgabe d)\footnote{an mehreren Stellen Querverweise auf verschiedene Teile Ihres Textes} ebenfalls erledigt haben, können wir uns nun Aufgabe f)\footnote{Testen Sie die scrlayer-scrpage-Variante für lebende Kolumnentitel in Ihrem
+Dokument der Klasse scrreprt} widmen. Dafür binden wir das Paket \verb!scrlayer-scrpage!\footnote{\label{fn:scrlayer-scrpage}Einbinden über \textbackslash usepackage\{scrlayer-scrpage\}} ein. Wir wählen auch gleich noch den Seitenstil scrheadings\footnote{\label{fn:scrheadings}Auswahl über \textbackslash pagestyle\{scrheadings\}} aus, wodurch LaTeX mitgeteilt wird, dass Kopf- und Fußzeilen mit dem \verb!scrlayer-scrpage!\footref{fn:scrlayer-scrpage} Paket gesetzt werden sollen. Der Befehl \verb!\clearpairofpagestyles! leert alle sechs Platzhalter, sodass wir diese nach unseren Wünschen befüllen können. Wenn wir nun \verb!\chead{\headmark}! mit den weiteren Befehlen \verb!\automark[chapter]{chapter}! und \\ \verb!\renewcommand*{\chaptermarkformat}{\chapapp~\thechapter:\enskip}! verwenden, wird der Name des aktuellen Kapitels auf den Unterseiten des Kapitels oben in der Mitte angezeigt.
+Um die Seitenzahlen im Fußbereich anzeigen zu können, verwenden wir \verb!\cfoot{\pagemark}!. Dass nun alles auch auf den ersten Seiten des Kapitels angezeigt wird, verwenden wir den Befehl \verb!\renewcommand*{\chapterpagestyle}{scrheadings}! um den Style der Chapter Seiten auch auf den Seitensil \verb!scrheadings!\footref{fn:scrheadings} stellen.
+
+
+\chapter[Blatt 3]{Kurstag 2 - Kapitel 5 \& 6}
+\label{cha:chap5-6}
+\label{blatt:3}
+
+\section{Tabelle mit fester Breite}
+\label{sec:table-fixed}
+\subsection{Tabelle mit fester Spaltbreite}
+\label{subsec:table-col-fixed}
+Für eine Tabelle mit fester Breite kann man beim erstellen die Argumente \verb!p{breite}!\footnote{Text vertikal oben ausgerichtet}, \verb!b{breite}!\footnote{Text vertikal unten ausgerichtet} und \verb!m{breite}!\footnote{Text vertikal mittig ausgerichtet} anstatt \verb!l!\footnote{\label{fn:tab-l}Text ohne feste Spaltbreite links ausgerichtet}, \verb!r!\footnote{\label{fn:tab-r}Text ohne feste Spaltbreite rechts ausgerichtet} und \verb!c!\footnote{\label{fn:tab-c}Text ohne feste Spaltbreite mittig ausgerichtet} vergeben. In den Klammern kann man nun die Spaltenbreite angeben. Sollte man für \verb!p!, \verb!b! und \verb!m! nun auch noch die Ausrichtung des Texts ändern wollen, kann man mit \verb!\newcolumntype{"neuer Typbuchstabe"}[1]{>{! \\ \verb!"\centering, \raggedleft oder \raggedright"\arraybackslash}"p, b oder m"{#1}}!\footnote{\label{fn:text-alignment}\textbackslash centering: Text zentriert \\ \textbackslash raggedleft: rechts ausgerichtet \\ \textbackslash raggedright: links ausgerichtet
+}
+einen neuen Typ erstellen.
+\begin{table}[hbt!]
+  \label{tab:table-col-fixed}
+  \newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}}
+  \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+  \centering
+  \begin{tabular}{L{70mm} M{28mm} L{45mm}}
+    \multicolumn{3}{c}{Fächer dieses Semester}\\
+    \toprule
+    \centering{Fach}                                              & Häufigkeit                      & Tage      \\
+    \midrule
+    Algorithmen und Datenstrukturen                               & \multirow{4}{*}{2x pro Woche}   & Dienstag \& Donnerstag  \\
+    Analysis 2 für Informatik                                     &                                 & Dienstag \& Freitag     \\
+    Formale Grundlagen                                            &                                 & Montag \& Donnerstag  \\
+    Mathematik für Informatik I                                   &                                 & Montag \& Dienstag    \\
+    \midrule
+    Einführung in die Forschungsmethoden                          & \multirow{2}{*}{1x pro Woche}   & Dienstag    \\
+    Web Engineering                                               &                                 & Donnerstag  \\
+    \midrule
+    \LaTeX - praktische Anwendung in wissenschaftlichen Arbeiten  & 4x im Semester                  & Freitag \& Samstag    \\
+    \midrule
+    Psychologie für Nichtpsycholog*innen                          & 2x im Semester                  & Freitag \& Samstag    \\
+    \midrule
+    Visual Computing                                              & 9x im Semester                  & ---          \\
+    \bottomrule
+  \end{tabular}
+  \caption[Aufgabe 1 - Tabelle mit fester Spaltbreite]{Tabelle mit fester Spaltbreite}
+\end{table}
+
+\subsection{Tabelle mit fester Gesamtbreite}
+\label{sec:table-total-fixed}
+Sollte man die Gesamtbreite definieren, die Spalten aber flexibel lassen wollen, müssen wir anstatt \verb!\begin{tabular}!, \verb!\begin{tabularx}! verwenden. Nun können wir ein Argument wie z.B. \verb!\begin{tabularx}{0.8\linewidth}! hinzufügen um die Tabelle hier 80\% der Seitenbreite breit zu machen. Nun können wir die Spalten, welche nun flexibel sein sollen durch ein \verb!X! definieren. Sollten wir hier wieder eine gewissen Textausrichtung haben wollen, können wir hier wieder mit dem Befehl \verb!\newcolumntype{"neuer Typbuchstabe"}!\\ \verb!{>{"\centering, \raggedleft oder \raggedright"\arraybackslash}X}!\footref{fn:text-alignment} ein neuen Spaltentyp erstellen.
+\begin{table}[hbt!]
+  \label{tab:table-total-fixed}
+  \newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}}
+  \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+  \centering
+  \begin{tabularx}{0.8\linewidth}{
+    X
+    S[input-decimal-markers=(:), table-format=1:2, output-decimal-marker=\,:]<{\,h}
+    Y
+    }
+    \toprule
+    \multicolumn{3}{c}{Arbeitsaufwand} \\
+    \midrule\midrule
+    Aufgabenblatt 1 & 1:15 & war einfach \\
+    Aufgabenblatt 2 & 2:30 & hab mich etwas verkünstelt \\
+    Aufgabenblatt 3 & 2:30 & Ich hasse Tabellen \\
+    \bottomrule
+  \end{tabularx}
+  \caption[Aufgabe 1 - Tabelle mit fester Gesamtbreite]{Tabelle mit fester Gesamtbreite}
+\end{table}
+
+\section{Tabelle mit flexibler Breite}
+\label{sec:table-flex}
+Für eine Tabelle mit flexibler Breite kann man beim erstellen die Argumente \verb!l!\footref{fn:tab-l}, \verb!r!\footref{fn:tab-r} und \verb!c!\footref{fn:tab-c} vergeben.
+\begin{table}[hbt!]
+  \label{tab:table-flex}
+  \centering
+  \begin{tabular}{l | c | l}
+    über mir steht kein Text & dafür links \& rechts von mir & neben mir steht nur links etwas \\
+    \hline
+    über mir schon & über mir auch & über mir ebenfalls \\
+    \hline
+    reden hier die Zellen miteinander? & so sieht es aus & zu viel \LaTeX macht verrückt \\
+
+  \end{tabular}
+  \caption[Aufgabe 1 - Tabelle mit flexibler Breite]{Tabelle mit flexibler Breite}
+\end{table}
+
+\section{Tabelle über mehrere Seiten}
+\label{sec:longtable}
+Es gibt ein spezielles Paket, mit welchem man Tabellen erstellen kann, welche sich über mehrere Seiten strecken. Dieses nennt sich \verb!longtable!\footnote{Einbinden über \textbackslash usepackage\{longtable\}}. Um in diesem Paket eine Tabelle zu erstellen, schreiben wir \verb!\begin{longtable}{"spalten"}!. Nun müssen wir die Kopf- und Fußzeilen des Longtables bestimmten. Dies machen wir, indem wir die Erste Zeile erstellen und danach \verb!\endfirsthead! schreiben. Das ist die Kopfzeile der Tabelle, welche nur am Anfang der Tabelle angezeigt wird. Dies machen wir nun auch für die Befehle \verb!\endhead!, \verb!\endfoot! und \verb!\endlastfoot!. \verb!\endhead! steht hierbei für die Kopfzeile, welche auf den weiteren Seiten angezeigt wird. Ebenso verhält es sich mit \verb!\endfoot! und \verb!\endlastfoot!. \verb!\endfoot! steht hier für die Fußzeile der weiteren Seiten und \verb!\endlastfoot! für die letzte Zeile der Tabelle.\\
+Danach fügt man den Inhalt der Tabelle an und beendet das ganze mit einem \verb!\end{longtable}!.
+
+\begin{longtable}{lcl}
+  % Definition des Tabellenkopfes auf der ersten Seite
+  \toprule
+  Dies erscheint & am Anfang & der Tabelle \\
+  \bottomrule
+  \endfirsthead
+  % Definition des Tabellenkopfes auf den folgenden Seiten
+  \midrule
+  Dies erscheint oben & auf den Seiten & der Tabelle \\
+  \midrule
+  \endhead
+  \midrule
+  Dies erscheint unten & auf den Seiten & der Tabelle \\
+  \midrule
+  \endfoot
+  \toprule
+  Dies erscheint & am Ende & der Tabelle \\
+  \bottomrule
+  \caption[Aufgabe 2 - Tabelle über mehrere Seiten]{Tabelle über mehrere Seiten} \\
+  \endlastfoot
+  \label{tab:longtable}
+  % Ab hier kommt der Inhalt der Tabelle
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+  Ich bin & ein langer & Inhalt \\
+\end{longtable}
+
+\newpage
+\section{Grafiken in \LaTeX}
+\label{sec:graphics}
+Um Grafiken in \LaTeX einbinden zu können benötigen wir das \verb!graphicx!\footnote{Einbinden über \textbackslash usepackage\{graphicx\}} Paket. Nun haben wir die Möglichkeit mit \verb!\includegraphics{pfad}! ein Bild innerhalb einer \verb!figure! darzustellen.
+
+\subsection{Parameter für \textbackslash includegraphics}
+\label{subsec:graphics-param}
+
+\subsubsection{width}
+\label{subsubsec:graphics-param-width}
+Mit dem Parameter \verb!width! lässt sich die Breite des Bildes angeben. Definiert man zusätzlich keine \verb!height!(Siehe \vref{subsubsec:graphics-param-height}), wird diese gleichmäßig zur \verb!width! skaliert.
+\begin{figure} [hbt!]
+  \centering
+  \includegraphics[width=\linewidth]{img/latex-logo}
+  \caption{Grafik mit einer Breite von 100\% der Seite}
+  \label{fig:graphics-param-width-1}
+\end{figure}
+\begin{figure} [hbt!]
+  \centering
+  \includegraphics[width=0.8\linewidth]{img/latex-logo}
+  \caption{Grafik mit einer Breite von 80\% der Seite}
+  \label{fig:graphics-param-width-2}
+\end{figure}
+
+\subsubsection{height}
+\label{subsubsec:graphics-param-height}
+Mit dem Parameter \verb!height! lässt sich die Höhe des Bildes angeben. Definiert man zusätzlich keine \verb!width!(Siehe \vref{subsubsec:graphics-param-width}), wird diese gleichmäßig zur \verb!height! skaliert.
+\begin{figure} [hbt!]
+  \centering
+  \includegraphics[height=100px]{img/latex-logo}
+  \caption{Grafik mit einer Höhe von 100px}
+  \label{fig:graphics-param-height-1}
+\end{figure}
+\begin{figure} [hbt!]
+  \centering
+  \includegraphics[height=80px]{img/latex-logo}
+  \caption{Grafik mit einer Höhe von 80px}
+  \label{fig:graphics-param-height-2}
+\end{figure}
+
+\subsubsection{scale}
+\label{subsubsec:graphics-param-scale}
+Mit dem Parameter \verb!scale! lässt sich die Skalierung des Bildes angeben.
+\begin{figure} [hbt!]
+  \centering
+  \includegraphics[scale=0.1]{img/latex-logo}
+  \caption{Grafik mit einer Skalierung von 10\%}
+  \label{fig:graphics-param-scale-1}
+\end{figure}
+\begin{figure} [hbt!]
+  \centering
+  \includegraphics[scale=0.05]{img/latex-logo}
+  \caption{Grafik mit einer Skalierung von 5\%}
+  \label{fig:graphics-param-scale-2}
+\end{figure}
+
+\newpage
+
+\subsubsection{angle}
+\label{subsubsec:graphics-param-angle}
+Mit dem Parameter \verb!angle! lässt sich die Drehung des Bildes angeben.
+\begin{figure} [hbt!]
+  \centering
+  \includegraphics[width=0.8\linewidth, angle=90]{img/latex-logo}
+  \caption{Grafik mit einer Drehung von 90°}
+  \label{fig:graphics-param-angle-1}
+\end{figure}
+\begin{figure} [hbt!]
+  \centering
+  \includegraphics[width=0.8\linewidth, angle=180]{img/latex-logo}
+  \caption{Grafik mit einer Drehung von 180°}
+  \label{fig:graphics-param-angle-2}
+\end{figure}
+
+\newpage
+
+\subsubsection{alles zusammen}
+\label{subsubsec:graphics-param-all}
+Nun vermischen wir alle Parameter, welche wir gerade kennengelernt haben.
+\begin{figure} [hbt!]
+  \centering
+  \includegraphics[width=0.6\linewidth,height=250px, angle=90]{img/latex-logo}
+  \caption{Grafik mit einer Wilden Mischung aus allen Parametern}
+  \label{fig:graphics-param-all-1}
+\end{figure}
+\begin{figure} [hbt!]
+  \centering
+  \includegraphics[width=0.54821\linewidth,height=541px, angle=4161]{img/latex-logo}
+  \caption{Grafik mit einer Wilden Mischung aus allen Parametern}
+  \label{fig:graphics-param-all-2}
+\end{figure}
+
+\chapter[Blatt 4]{Kurstag 2 - Kapitel 7 \& 8}
+\label{cha:chap7-8}
+\label{blatt:4}
+
+\section{Kurztitel und Verzeichnisse}
+\label{sec:kurztitel}
+Gibt man den Captions oder den Gliederungsüberschriften einen Kurztitel in \verb![]!, dann wird dieser an Stelle des eigentlichen Titels im Inhalts-, bzw. Abbuldungs- und Tabellenverzeichnis angezeigt.
+
+\section{Gliederungskommandos und das *}
+\label{sec:*}
+Gibt man einem Gliederungskommando (\verb!\chapter{}!, \verb!\section{}!, ...) ein \verb!*! vor die \verb!{}! so wird dieses nicht im Inhalts-, bzw. Abbuldungs- und Tabellenverzeichnis indiziert und bekommt ebenfalls keine Nummerierung.
+
+\chapter[Blatt 5]{Kurstag 2 - Kapitel 9}
+\label{cha:chap9}
+\label{blatt:5}
+
+\section{Überprüfung Kurztitel}
+\label{sec:proof}
+Wenn wir die Kapitelüberschrift \verb!\chapter[Formelübungen]{Übungen zu Formeln aus! \\ \verb!Tutorial und Skript}! zur Überprüfung eingeben, erscheint der Titel \glqq Formelübungen\grqq \:im Inhaltsverzeichnis und der Titel \glqq Übungen zu Formeln aus Tutorial und Skript\grqq \:im Fließtext.
+
+\section{nummerierte Formeln}
+\label{sec:nummerierte-formeln}
+\centering
+\begin{equation}
+  \label{eq:pythagoras}
+  a^2+b^2=c^2
+\end{equation}
+Satz des Pythagoras
+
+\begin{equation}
+  \label{eq:mnf}
+  x_{1,2}=\frac{-b \pm \sqrt{b^2-4 \cdot a \cdot c}}{2 \cdot a}
+\end{equation}
+Mitternachtsformel
+
+\begin{equation}
+  \label{eq:am}
+  \bar{x}=\frac{1}{n} \sum_{i=1}^n x_i
+\end{equation}
+arithmetisches Mittel
+
+\begin{equation}
+  \label{eq:hr}
+  1+\frac{1}{2}++\frac{1}{3}+\frac{1}{4}+\cdots+\frac{1}{n} = \infty
+\end{equation}
+Harmonische Reihe
+
+\begin{equation}
+  \label{eq:hr2}
+  \zeta(1)=\sum_{n=1}^{\infty}\frac{1}{n^1}=\infty
+\end{equation}
+Harmonische Reihe
+
+\begin{equation*}
+  \label{eq:bnf}
+  \begin{aligned}
+    (a+b)^2         &= a^2+2ab+b^2\\
+    (a-b)^2         &= a^2-2ab+b^2\\
+    (a+b)\cdot(a-b) &= a^2-b^2
+  \end{aligned}
+\end{equation*}
+binomische Formeln
+
+\chapter[Formelübungen]{Übungen zu Formeln aus Tutorial und Skript}
+\label{cha:formelübungen}
+\end{document}

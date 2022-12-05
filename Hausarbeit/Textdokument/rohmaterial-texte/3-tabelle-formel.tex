@@ -1,0 +1,133 @@
+\chapter[Praxisübungen]{Praxis zu Tabellen und Formeln}
+
+\section{Eine Tabelle in Überlänge}
+In Tabelle \cref{tab:1} ist eine über eine Seite hinausreichende Tabelle zu sehen. 
+{\tiny % Größe der Schrift
+\begin{longtable}{lllllll}
+    \caption{Eine Tabelle in Überlänge} \\
+      % Definition des Tabellenkopfes auf der ersten Seite
+  \toprule
+  ~ & ~ & ~ & ~ & \multicolumn{3}{c}{Umsätze in EUR} \\
+  \cline{5-7}
+  Firma & Ort & PLZ & Straße & \multicolumn{1}{c}{2013} & \multicolumn{1}{c}{2014} & \multicolumn{1}{c}{2015} \\ 
+  \midrule
+  \endfirsthead
+  % Definition des Tabellenkopfes auf den folgenden Seiten
+  \multicolumn{7}{c}{Tabelle 3.1: Fortsetzung der Tabelle} \\
+  \midrule
+  ~ & ~ & ~ & ~ & \multicolumn{3}{c}{Umsätze in EUR} \\
+  \cline{5-7}
+  Firma & Ort & PLZ & Straße & \multicolumn{1}{c}{2013} & \multicolumn{1}{c}{2014} & \multicolumn{1}{c}{2015} \\ 
+  \midrule
+  \endhead
+  % Definition des Tabellenfußes auf der ersten Seite
+  \midrule
+  \multicolumn{7}{c}{Fortsetzung auf der nächsten Seite} \\
+  \midrule
+  \endfoot
+  % Definition des Tabellenfußes am Ende der Tabelle
+  \midrule
+  \multicolumn{7}{c}{Ende der Tabelle mit Überlänge} \\
+  \bottomrule
+  \endlastfoot
+  \label{tab:1}
+    % Ab hier kommt der Inhalt der Tabelle
+        ~ & ~ & ~ & ~ & ~ & ~ & ~ \\
+        Donau Büroeinrichtungen & Linz & 4020 & Schubertplatz 9 & 51560.00 & 56716.00 & 62387.60 \\ 
+        Bürocenter Tirol & Innsbruck & 6020 & Innstraße 234 & 480536.00 & 528589.60 & 581448.56 \\ 
+        Carynthia Firmenausstattung & Klagenfurt & 9201 & Kaiser-Franz-Str. 1806 & 199120.00 & 219032.00 & 240935.20 \\ 
+        Möbelhaus am Donaukanal & Wien & 1050 & Kanalstraße 45 & 257817.00 & 283598.70 & 311958.57 \\ 
+        Mozart Möbel & Salzburg & 5020 & Salieristraße 34 & 33797.00 & 37176.70 & 40894.37 \\ 
+        Mödlinger Möbelhaus & Wien & 1210 & Beethovengässchen 65 & 61960.00 & 68156.00 & 74971.60 \\ 
+        Almuts alternatives Möbelhaus & Hintertux & 6293 & Stallmannplatz 1 & 90205.00 & 99225.50 & 109148.05 \\ 
+        Möbelhaus Borsche & Stuttgart & 70376 & Industriestraße 34 & 365711.00 & 402282.10 & 442510.31 \\ 
+        Breitlingcenter & Rostock & 18119 & Warnowstraße 110 & 42791.00 & 47070.10 & 51777.11 \\ 
+        Berliner Möbelhaus & Berlin & 10131 & Masha-Straße 41 & 278208.00 & 306028.80 & 336631.68 \\ 
+        Büroaustattung Balzer & Frankfurt/Main & 60435 & Carmenplatz 23 & 125951.00 & 138546.10 & 152400.71 \\ 
+        Schweriner Möbelhaus & Schwerin & 19123 & Kaiserstraße 34 & 144480.00 & 158928.00 & 174820.80 \\ 
+        Möbelfleet & Kiel & 24123 & Graf-Luckner-Platz 16 & 83556.00 & 91911.60 & 101102.76 \\ 
+        Möbel Schulze & Bremen & 28121 & Kormoranstraße 34 & 67035.00 & 73738.50 & 81112.35 \\ 
+        Möbelhaus Deutsches Eck & Koblenz & 56068 & Wilhelmstraße 71 & 311029.00 & 342131.90 & 376345.09 \\ 
+        Badische Büromöbel GmbH & Freiburg/Br. & 79106 & Eschholzstr. 10 & 148496.00 & 163345.60 & 179680.16 \\ 
+        Luidolf-Einrichtungen GmbH & Quedlinburg & 06484 & Stiftsplatz 1 & 39400.00 & 43340.00 & 47674.00 \\ 
+        Goethe-Möbel & Weimar & 99123 & Auerbachstraße 36 & 147962.00 & 162758.20 & 179034.02 \\ 
+        Möbelzeche & Recklinghausen & 45665 & Immelmannstraße 1 & 484552.00 & 533007.20 & 586307.92 \\ 
+        Möbelhaus Spatz & Regensburg & 93123 & Domplatz 11 & 72533.00 & 79786.30 & 87764.93 \\ 
+        Jeetzedesign & Salzwedel & 29410 & Diesdorfer Straße 21 & 1492.00 & 1641.20 & 1805.32 \\ 
+        Bürocenter Rödelheim & Frankfurt/Main & 60123 & Waggonstraße 78 & 129718.00 & 142689.80 & 156958.78 \\ 
+        Otto GmbH & Havelberg & 39539 & Burghardstr. 4 & 132275.00 & 145502.50 & 160052.75 \\ 
+        Trifels Möbel & Annweiler & 76855 & Romanstraße 6 & 176361.00 & 193997.10 & 213396.81 \\ 
+        Möbelhaus Heinkel & Rostock & 18059 & Cannstatter Str. 12 & 374363.00 & 411799.30 & 452979.23 \\ 
+        Möbelhaus Bad Doberan & Bad Doberan & 18209 & Klosterstraße 12 & 70816.00 & 77897.60 & 85687.36 \\ 
+        Saarmöbel & Saarbrücken & 66111 & Nebenstraße 23 & 454900.00 & 500390.00 & 550429.00 \\ 
+        Ilmenauer \& Co. & Saarlouis & 66740 & Alter Weg 58 & 41926.00 & 46118.60 & 50730.46 \\ 
+        Möbel Engert & Frankfurt/Main & 60314 & Eckhardtstraße 89 & 192556.00 & 211811.60 & 232992.76 \\ 
+        Bürocenter St. Pirmin & Pirmasens & 66953 & Adelheidstr. 78 & 309360.00 & 340296.00 & 374325.60 \\ 
+        Möbelstube Degehardt & Köln & 51069 & Hartplatz 44 & 93188.00 & 102506.80 & 112757.48 \\ 
+        Mannis Möbelscheune & Aachen & 52111 & Im Weg 13 & 98669.00 & 108535.90 & 119389.49 \\ 
+        Büromeister GmbH & Hamburg & 20122 & Wasserfahrt 4 & 382413.00 & 420654.30 & 462719.73 \\ 
+        Büro Mayer & Offenbach/Main & 63123 & Bieberer Straße 34 & 117371.00 & 129108.10 & 142018.91 \\ 
+        Möbel-Dreyer & Potsdam & 14482 & Windspielplatz 16 & 208725.00 & 229597.50 & 252557.25 \\ 
+        Donau-Inn-Ilz Möbelhaus & Passau & 94034 & Seidelhof 7 & 393262.00 & 432588.20 & 475847.02 \\ 
+        LifeStyleTemple & Berlin & 10011 & Kurfüstendamm 456 & 20063.00 & 22069.30 & 24276.23 \\ 
+        Möbelhaus Morath & Lübeck & 23123 & Grünlichplatz 3 & 144253.00 & 158678.30 & 174546.13 \\ 
+        Büroausstattung am Stachus & München & 90123 & Karlsplatz 23 & 52149.00 & 57363.90 & 63100.29 \\ 
+        Schreinerei Schröder & Hannover & 30123 & Maschseeaue 52 & 41434.00 & 45577.40 & 50135.14 \\ 
+        Alstermöbel & Hamburg & 20122 & Hartmannsaue 9 & 117536.00 & 129289.60 & 142218.56 \\ 
+        Kaiser-Friedrich-Möbel & Wiesbaden & 65189 & Thermenstraße 2 & 426058.00 & 468663.80 & 515530.18 \\ 
+        Schreinerei Radtke & Hoyerswerda & 02977 & Holzweg 42 & 413439.00 & 454782.90 & 500261.19 \\ 
+        Büroausstattung Ilmtal & Apolda & 99510 & Hauptstraße 67 & 144705.00 & 159175.50 & 175093.05 \\ 
+        Büroausstattung Murkel & Paderborn & 33123 & Konviktstraße 14 & 125877.00 & 138464.70 & 152311.17 \\ 
+        Kultsofa KG & Mainz & 55116 & Augustinergasse 23 & 10207.00 & 11227.70 & 12350.47 \\
+        Möbel Döbel & Dillingen & 66763 & Saarstraße 42 & 61160.00 & 67276.00 & 74003.60 \\
+        Wachwitzmöbel & Dresden & 01326 & Corneliengasse 13 & 229912.00 & 252903.20 & 278193.52 \\
+        Jugendmöbel & Darmstadt & 64283 & Grafenstraße 59 & 174190.00 & 191609.00 & 210769.90 \\
+        Möbelwiese & Ludwigshafen & 67061 & Evastraße 23 & 361121.00 & 397233.10 & 436956.41 \\
+        Semper-Möbel & Dresden & 01326 & Seidemannstraße 72 & 134288.00 & 147716.80 & 162488.48 \\
+        Büromöbelzentrum & Magdeburg & 39123 & Königin-Edith-Straße 2 & 60324.00 & 66356.40 & 72992.04 \\
+        Bürohaus Hauser & Cottbus & 03123 & Anselmstraße 11 & 48790.00 & 53669.00 & 59035.90 \\
+        Büro-Discount & Erfurt & 99123 & Grünwiese 345 & 53480.00 & 58828.00 & 64710.80 \\
+        Weserbüro OHG & Bremen & 28113 & Rolandsweg 11 & 94678.00 & 104145.80 & 114560.38 \\
+        Büromöbel Karly & Zerbst & 39261 & Archivstraße 45 & 140715.00 & 154786.50 & 170265.15 \\
+        Bürocenter & Bremen & 28122 & Klarastraße 13 & 32288.00 & 35516.80 & 39068.48 \\
+        Möbelhaus Niederschlesien & Görlitz & 02123 & Berliner Straße 34 & 135089.00 & 148597.90 & 163457.69 \\
+        Möbelhaus Pfleiderer & Ulm & 89123 & Schwabenplatz 15 & 129664.00 & 142630.40 & 156893.44 \\
+        Stolz KG & Potsdam & 14123 & Havelaue 37 & 144157.00 & 158572.70 & 174429.97 \\
+        Emscher-Bürocenter & Dortmund & 44139 & Rasenplatz 45 & 248087.00 & 272895.70 & 300185.27 \\
+        Frisia Büro & Aurich & 26124 & Dorotheenweg 78 & 66096.00 & 72705.60 & 79976.16 \\
+        Möbelcenter Wilhelmshöhe & Kassel & 34123 & Sedanstraße 51 & 150304.00 & 165334.40 & 181867.84 \\
+        Fugger Bürocenter & Augsburg & 86150 & Alte Gasse 34 & 4852.00 & 5337.20 & 5870.92 \\
+        Wannsee-Büro GmbH & Berlin & 10122 & Wackerstr. 19 & 283149.00 & 311463.90 & 342610.29 \\
+        Biomöbel Gera & Gera & 07546 & Halbstraße 62 & 263447.00 & 289791.70 & 318770.87 \\
+        Neckar-Büro OHG & Tübingen & 72076 & Konviktstraße 55 & 150514.00 & 165565.40 & 182121.94 \\
+        KdO & Berlin & 10123 & Marthastraße 34 & 109917.00 & 120908.70 & 132999.57 \\
+        Möbelhansa & Hamburg & 20123 & Helgoländer Allee 53 & 111880.00 & 123068.00 & 135374.80 \\
+\end{longtable}}
+
+\section{Durchschnittsnoten: Für und Wider}
+
+Schulnotendurchschnitten sollte man skeptisch gegenüberstehen, insbesondere da sie ja als arithmetischer Mittelwert, also als Summe aller Werte geteilt durch ihre Anzahl errechnet werden: \\
+
+\begin{equation}
+    \begin{aligned}
+        \overline{x}_{arith} &= \frac{1}{n}\sum_{i=1}^{n}x_i \\
+                             &= \frac{x_1+x_2+\dots+x_n}{n}
+    \end{aligned}
+  \end{equation}
+
+Warum? \\ \\ \\
+Schulnoten sollen die Schulleistung messen. Wir alle wissen, eine \glqq Eins\grqq\: ist besser als eine  \glqq Zwei\grqq; diese ist besser als eine  \glqq Drei\grqq\: etc.
+Doch um WIEVIEL ist die eine Note besser resp. schlechter als eine andere? Es sind zunächst nur Aussagen auf dem Niveau einer Rangskala (besser, schlechter, ...). Die Zahlen könnten auch  \glqq Sieben\grqq,  \glqq Dreizehn\grqq,  \glqq Siebzehn\grqq\: etc. lauten ...
+Die Verwendung des arithmischen Mittelwerts setzt aber ein metrisches Skalenniveau voraus, bei dem die Zahlen einen konkreten definierten Wert auf der Skala haben. Erst dann macht es Sinn, sie zu addieren und durch ihre Anzahl zu teilen.
+
+Richtigerweise sollte man auf dem Rangskalenniveau den Median als Maß für die  \glqq zentrale Tendenz\grqq verwenden. Der Median ist definiert als mittlerer Wert in der nach Größe geordneten Reihe aller Messwerte. Bei einer ungeraden Anzahl von Messwerten gibt es diesen \glqq Wert in der Mitte\grqq direkt, bei einer geraden Anzahl von Messwerten gibt es zwei Werte in der Mitte, die dann, so die Definition des Medians, arithmetisch gemittelt werden: beide Werte werden addiert und durch zwei geteilt: 
+
+\begin{equation}
+    \overline{x}_{median}=
+    \begin{cases}
+        x_{\frac{n+1}{2}} & \text{$n$ ungerade}\\
+        \frac{1}{2}(x_{\frac{n}{2}}+x_{\frac{n}{2}+1}) & \text{$n$ gerade}
+      \end{cases}
+\end{equation}
+
+So schön es ist, jetzt zu wissen, wie es richtig geht - mit derartigen Fragestellungen sind Kultusminister und auch viele Lehrer wohl doch überfordert.
